@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Painel OmniBot</title>
+</head>
+<body>
+  <h1>Painel Admin</h1>
+
+  <p><b>API Key:</b> <span id="apiKey"></span></p>
+
+  <label>Idioma:</label>
+  <select id="language">
+    <option>português</option>
+    <option>inglês</option>
+  </select>
+
+  <label>IA:</label>
+  <select id="aiProvider">
+    <option value="local">IA Gratuita</option>
+    <option value="openai">OpenAI</option>
+  </select>
+
+  <button onclick="save()">Salvar</button>
+
+  <script>
+    async function save() {
+      alert("Configurações salvas (mock)");
+    }
+  </script>
+</body>
+</html>
