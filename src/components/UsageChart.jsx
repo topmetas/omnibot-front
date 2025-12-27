@@ -1,28 +1,27 @@
-import {
-    BarChart,
-    Bar,
-    XAxis,
-    YAxis,
-    Tooltip,
-    ResponsiveContainer,
-  } from "recharts";
+export default function UsageCard({ title, value = 0, max = 1 }) {
+    const percent = Math.min(
+      Math.round((value / max) * 100),
+      100
+    );
   
-  export default function UsageChart({ data }) {
     return (
-      <div className="bg-white p-4 rounded shadow">
-        <h3 className="font-bold text-gray-700 mb-4">
-          Uso por origem
-        </h3>
+      <div className="bg-white dark:bg-slate-800 p-4 rounded shadow">
+        <h4 className="text-sm text-slate-500">{title}</h4>
   
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={data}>
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="messages" fill="#4f46e5" />
-            <Bar dataKey="tokens" fill="#10b981" />
-          </BarChart>
-        </ResponsiveContainer>
+        <p className="text-2xl font-bold mt-1">
+          {value.toLocaleString()} / {max.toLocaleString()}
+        </p>
+  
+        <div className="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded mt-2">
+          <div
+            className="bg-indigo-600 h-2 rounded"
+            style={{ width: `${percent}%` }}
+          />
+        </div>
+  
+        <p className="text-xs text-slate-500 mt-1">
+          {percent}%
+        </p>
       </div>
     );
   }
