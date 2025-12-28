@@ -1,7 +1,16 @@
 {
-    "rewrites": [
-      { "source": "/widget/:path*", "destination": "/src/widget/:path*" },
-      { "source": "/admin", "destination": "/src/admin/index.html" }
-    ]
-  }
-  
+  "rewrites": [
+    {
+      "source": "/widget/:path*",
+      "destination": "/src/widget/:path*"
+    },
+    {
+      "source": "/admin",
+      "destination": "/src/admin/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
